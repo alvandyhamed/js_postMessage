@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var postMessageHandler=function (e) {
+            msg=JSON.parse(e.data)
+            if (msg.readyToPlay){
+                document.getElementById("fs").innerText="Ready medy Mr"+msg.name
+                if (msg.url){
+                    windows.open(msg.url)
+                }
+            }
+
+        }
+        window.addEventListener("message",postMessageHandler,false)
+    </script>
+</head>
+<body>
+<h1>
+    Reciver message
+</h1>
+<h2 id="fs"> Game is Loading....</h2>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var game_url="http://localhost:5005/";
+        function popup(){
+            window.test=open(game_url,"pop","width=850,height=750,resizable=1");
+            setTimeout(msg,1000)
+        }
+        function msg(){
+            window.test.postMessage(JSON.stringify({"readyToPlay":true,"name":"Hamed0x"}),'*')
+        }
+    </script>
+</head>
+<body>
+<h1>
+  My name is H0x is sender
+</h1>
+<input type="button" value="Start" onclick="popup()">
+<iframe id="ifr" src="http://hamed0x.ir">
+
+</iframe>
+
+</body>
+</html>
